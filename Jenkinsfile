@@ -1,7 +1,5 @@
 properties([pipelineTriggers([githubPush()])])
 
-
-
 node('linux') {   
  
   stage('UnitTests') {    
