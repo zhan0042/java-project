@@ -9,7 +9,7 @@ node('linux') {
         sh 'aws cloudformation describe-stack-resources --stack-name jenkins --region us-east-1'  
 	}
 	
-	junit 'reports/result.xml'
+	junit 'reports/*.xml'
 	sh 'ant -f test.xml -v'   
 	}   
 	
