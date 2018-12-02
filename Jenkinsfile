@@ -4,6 +4,9 @@ node('linux') {
  
   stage('UnitTests') {    
 	git 'https://github.com/zhan0042/java-project.git'
+	withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: '4d7150bb-3fac-444c-8150-b45d9b7c5099', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+        // some block
+        sh 'aws cloudformation describe-stack-resources --stack-name jenkins --region us-east-1'  
 	sh 'init ant'
 	junit 'reports/result.xml'
 	sh 'ant -f test.xml -v'   
