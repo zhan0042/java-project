@@ -19,7 +19,7 @@ node('linux') {
 	}   
   
   stage('Deploy') { 
-	sh 'aws s3 cp "/workspace/java-pipeline/dist/rectangle-30.jar" s3://cf-templates-1pvao47bf1v4p-us-east-1/'
+	sh 'aws s3 cp "Building jar" s3://cf-templates-1pvao47bf1v4p-us-east-1/'
   	}
 	
   stage('Report') {
