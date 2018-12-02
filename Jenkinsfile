@@ -17,5 +17,9 @@ node('linux') {
 	sh 'ant'   
 	sh 'ant -f build.xml -v'
 	}   
-   
+  
+  stage('Deploy') { 
+	sh 'copy Building jar: /workspace/java-pipeline/dist/rectangle-14.jar amazon S3/cf-templates-1pvao47bf1v4p-us-east-1'
+  	}
+	
 }
