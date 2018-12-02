@@ -19,7 +19,7 @@ node('linux') {
 	}   
   
   stage('Deploy') { 
-	sh 'cp /workspace/java-pipeline/dist/rectangle-14.jar amazon S3/cf-templates-1pvao47bf1v4p-us-east-1'
+	sh 'cp /workspace/java-pipeline/dist/rectangle-19.jar S3/cf-templates-1pvao47bf1v4p-us-east-1'
   	}
 	
 }
